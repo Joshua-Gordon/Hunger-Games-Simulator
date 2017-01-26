@@ -8,10 +8,12 @@ import tribute.Tribute;
 public class EventController implements Controller {
 	
 	private Event[] events;
+	private Event currentEvent;
 		
 	public EventController(Event[] events) {
 		super();
 		this.events = events;
+		currentEvent = events[0]; //Should always be the beginning
 	}
 	
 	public static boolean skillCheck(Tribute t, int skill, int difficulty) {
@@ -23,7 +25,7 @@ public class EventController implements Controller {
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
-		
+		currentEvent.execute();
 	}
 
 }

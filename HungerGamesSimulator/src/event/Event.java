@@ -11,9 +11,9 @@ public class Event implements Serializable {
 	 */
 	private static final long serialVersionUID = 4031966842159109874L;
 
-	private String name, description;
-	private Tribute[] tributes; //Tributes involves
-	private int[] directEffects; //Health & sanity effects
+	protected String name, description;
+	protected Tribute[] tributes; //Tributes involves
+	protected int[] directEffects; //Health & sanity effects
 	
 	public Event(String name, String description, Tribute[] tributes, int[] directEffects) {
 		super();
@@ -40,6 +40,10 @@ public class Event implements Serializable {
 
 	public Tribute[] getTributes() {
 		return tributes;
+	}
+	
+	public void setTributes(Tribute[] value) {
+		tributes = value;
 	}
 
 	public int[] getDirectEffects() {

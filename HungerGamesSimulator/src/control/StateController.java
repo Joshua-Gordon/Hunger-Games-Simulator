@@ -24,8 +24,8 @@ public class StateController implements Controller{
 	
 	@Override
 	public void update() {
-		
-		
+		ec.update();
+		tc.update();
 	}
 
 }

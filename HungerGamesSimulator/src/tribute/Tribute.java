@@ -13,6 +13,7 @@ public class Tribute implements Serializable {
 	private static final long serialVersionUID = 1619149575892843717L;
 	private int health, sanity;
 	private int[] skills;
+	private int[] baseSkills;
 	/*
 	 * 0 - Base HP
 	 * 1 - Base Sanity
@@ -32,6 +33,7 @@ public class Tribute implements Serializable {
 		super();
 		this.health = skills[0];
 		this.sanity = skills[1];
+		this.baseSkills = skills;
 		this.skills = skills;
 		this.attitudes = attitudes;
 		this.items = items;
@@ -47,6 +49,9 @@ public class Tribute implements Serializable {
 	
 	public void recieveItem(Item i) {
 		items.add(i);
+		for(int c = 0; c < i.getSkillUps().length; c++) {
+			skills[c] += i.getSkillUps()[c];
+		}
 	}
 	
 	public void useItem(Item i) {
@@ -84,5 +89,7 @@ public class Tribute implements Serializable {
 	public ArrayList<Item> getItems() {
 		return items;
 	}
+	
+	
 	
 }
